@@ -8,63 +8,9 @@
     <link rel="icon" type="image/x-icon" href="images/icons/directory.png">
 </head>
 <body>
-    <div id="icon-column">
-        <div class="icon" id="home" title="Home">
-            <a href="index.html"><img src="images/icons/computer.png" alt="Computer Icon"></a>
-            <span>Home</span>
-        </div>
-        <div class="icon" id="recycle-bin" title="Recycle Bin">
-            <img id="recycle-bin-icon" src="images/icons/recycle_bin_empty.png" alt="Recycle Bin Icon">
-            <span>Recycle Bin</span>
-        </div>
-        <div class="icon" id="my-github" title="Github">
-            <a href="https://github.com/JermNet"><img src="images/icons/world.png" alt="World Icon"></a>
-            <span>My GitHub</span>
-        </div>
-        <div class="icon" id="cool-projects" title="Projects">
-            <a href="projects.html"><img src="images/icons/console_prompt.png" alt="Console Prompt Icon"></a>
-            <span>Cool Projects</span>
-        </div>
-        <div class="icon" id="fun-things" title="Fun">
-            <a href="fun.html"><img src="images/icons/movie_maker.png" alt="Movie Maker Icon"></a>
-            <span>Fun Things</span>
-        </div>
-        <div class="icon" id="youtube-videos" title="Commentaries">
-            <a href="https://www.youtube.com/@JeremyWCoding"><img src="images/icons/camera_vid.png"></a>
-            <span>YouTube Videos</span>
-        </div>
-        <div class="icon" id="vital-documents" title="Documents">
-            <a href="documents.html"><img src="images/icons/briefcase.png"></a>
-            <span>Vital Documents</span>
-        </div>
-        <div class="icon" id="contact-me" title="Contact">
-            <a href="contact.html"><img src="images/icons/modem.png"></a>
-            <span>Contact Me</span>
-        </div>
-        <div class="icon" id="minesweeper" title="Minesweeper">
-            <img src="images/icons/minesweeper.png" alt="Minesweeper Icon">
-            <span>Minesweeper</span>
-        </div>
-        <div class="icon" id="credits" title="Credits">
-            <a href="credits.html"><img src="images/icons/notepad.png" alt="Notepad Icon"></a>
-            <span>Credits</span>
-        </div>
-    </div>
+    <div id="icon-column-container"></div>
     
-    <div class="search-bar">
-        <label for="page-select">Search:</label>
-        <select id="page-select" onchange="navigateToPage()">
-            <option value="">Select a page or stay here</option>
-            <option value="index.html">Home</option>
-            <option value="https://github.com/JermNet">My GitHub</option>
-            <option value="projects.html">Cool Projects</option>
-            <option value="fun.html">Fun Things</option>
-            <option value="https://www.youtube.com/@JeremyWCoding">YouTube Videos</option>
-            <option value="documents.html">Vital Documents</option>
-            <option value="contact.html">Contact Me</option>
-            <option value="credits.html">Credits</option>
-        </select>
-    </div>
+    <div id="search-bar-container"></div>
 
     <div class="window recycle-window" id="recycle-window-id" style="display: none;">
         <div class="title-bar">

@@ -1,3 +1,17 @@
+Promise.all([
+    fetch('components/search-bar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('search-bar-container').innerHTML = data;
+        }),
+    fetch('components/icon-column.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('icon-column-container').innerHTML = data;
+        })
+]).then(() => {
+    addEventListeners();
+}).catch(error => console.error('Error loading components:', error));
 // Logic to open a window by making it visible and animating it by adding and removing classes
 console.log("Script.js loaded");
 const trash = [];
@@ -85,25 +99,36 @@ document.querySelectorAll('.maximize').forEach(button => {
   });
 });
 
-// Open the recycle bin window when the icon is clicked. If it's already open, close it
-document.getElementById('recycle-bin').addEventListener('click', () => {
-  const trashWindow = document.getElementById('recycle-window-id');
-  if (trashWindow.style.display === 'none' || trashWindow.style.display === '') {
-      openWindow(trashWindow);
-  } else {
-      closeWindow(trashWindow);
-  }
-});
+function addEventListeners() {
+    // Open the recycle bin window when the icon is clicked
+    const recycleBin = document.getElementById('recycle-bin');
+    if (recycleBin) {
+        recycleBin.addEventListener('click', () => {
+            const trashWindow = document.getElementById('recycle-window-id');
+            if (trashWindow.style.display === 'none' || trashWindow.style.display === '') {
+                openWindow(trashWindow);
+            } else {
+                closeWindow(trashWindow);
+            }
+        });
+    }
 
-// Similar thing but for the minesweeper window
-document.getElementById('minesweeper').addEventListener('click', () => {
-  const minesweeperWindow = document.getElementById('minesweeper-window-id');
-  if (minesweeperWindow.style.display === 'none' || minesweeperWindow.style.display === '') {
-      openWindow(minesweeperWindow);
-  } else {
-      closeWindow(minesweeperWindow);
-  }
-});
+    // Open the minesweeper window when the icon is clicked
+    const minesweeper = document.getElementById('minesweeper');
+    if (minesweeper) {
+        minesweeper.addEventListener('click', () => {
+            const minesweeperWindow = document.getElementById('minesweeper-window-id');
+            if (minesweeperWindow.style.display === 'none' || minesweeperWindow.style.display === '') {
+                openWindow(minesweeperWindow);
+            } else {
+                closeWindow(minesweeperWindow);
+            }
+        });
+    }
+}
+
+
+
 
 
 function handleProjectWindow(projectId, windowId) {
