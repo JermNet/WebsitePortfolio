@@ -8,10 +8,18 @@ Promise.all([
         .then(response => response.text())
         .then(data => {
             document.getElementById('icon-column-container').innerHTML = data;
-        })
+        }),
+    fetch('components/recycle-bin.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('recycle-bin-container').innerHTML = data;
+        }),
 ]).then(() => {
     addEventListeners();
 }).catch(error => console.error('Error loading components:', error));
+
+
+
 // Logic to open a window by making it visible and animating it by adding and removing classes
 console.log("Script.js loaded");
 const trash = [];
@@ -57,47 +65,12 @@ function closeWindow(windowElement) {
   });
 }
 
-// Add event listeners to the close button
-document.querySelectorAll('.close').forEach(button => {
-  button.addEventListener('click', function () {
-      const windowElement = this.closest('.window, .recycle-window');
-      closeWindow(windowElement);
-  });
-});
+
 
 // Add event listeners to the minimize button
-document.querySelectorAll('.minimize').forEach(button => {
-  button.addEventListener('click', function () {
-      const windowElement = this.closest('.window');
-      const contentElement = windowElement.querySelector('.content');
-      if (windowElement && contentElement && !windowElement.classList.contains('minimized')) {
-          contentElement.classList.add('minimizing');
-          contentElement.addEventListener('animationend', function handleMinimize() {
-              windowElement.classList.add('minimized');
-              contentElement.classList.remove('minimizing');
-              contentElement.style.display = 'none';
-              contentElement.removeEventListener('animationend', handleMinimize);
-          });
-      }
-  });
-});
 
-// Add event listeners to the maximize button
-document.querySelectorAll('.maximize').forEach(button => {
-  button.addEventListener('click', function () {
-      const windowElement = this.closest('.window');
-      const contentElement = windowElement.querySelector('.content');
-      if (windowElement && contentElement && windowElement.classList.contains('minimized')) {
-          windowElement.classList.remove('minimized');
-          contentElement.style.display = '';
-          windowElement.classList.add('maximizing');
-          windowElement.addEventListener('animationend', function handleMaximize() {
-              windowElement.classList.remove('maximizing');
-              windowElement.removeEventListener('animationend', handleMaximize);
-          });
-      }
-  });
-});
+
+
 
 function addEventListeners() {
     // Open the recycle bin window when the icon is clicked
@@ -125,6 +98,55 @@ function addEventListeners() {
             }
         });
     }
+
+    // Add event listeners to the close button
+    document.querySelectorAll('.close').forEach(button => {
+        button.addEventListener('click', function () {
+            const windowElement = this.closest('.window, .recycle-window');
+            closeWindow(windowElement);
+        });
+    });
+
+    document.querySelectorAll('.minimize').forEach(button => {
+        button.addEventListener('click', function () {
+            const windowElement = this.closest('.window');
+            const contentElement = windowElement.querySelector('.content');
+            if (windowElement && contentElement && !windowElement.classList.contains('minimized')) {
+                contentElement.classList.add('minimizing');
+                contentElement.addEventListener('animationend', function handleMinimize() {
+                    windowElement.classList.add('minimized');
+                    contentElement.classList.remove('minimizing');
+                    contentElement.style.display = 'none';
+                    contentElement.removeEventListener('animationend', handleMinimize);
+                });
+            }
+        });
+      });
+
+      // Add event listeners to the maximize button
+    document.querySelectorAll('.maximize').forEach(button => {
+        button.addEventListener('click', function () {
+            const windowElement = this.closest('.window');
+            const contentElement = windowElement.querySelector('.content');
+            if (windowElement && contentElement && windowElement.classList.contains('minimized')) {
+                windowElement.classList.remove('minimized');
+                contentElement.style.display = '';
+                windowElement.classList.add('maximizing');
+                windowElement.addEventListener('animationend', function handleMaximize() {
+                    windowElement.classList.remove('maximizing');
+                    windowElement.removeEventListener('animationend', handleMaximize);
+                });
+            }
+        });
+    });
+
+    // Play a sound effect on the button click
+    document.getElementById('sound-button').addEventListener('click', () => {
+        const audio = new Audio('sounds/startup_sound.mp3');
+        audio.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+    });
 }
 
 
@@ -228,13 +250,7 @@ function updateRecycleBinIcon() {
     }
 }
 
-// Play a sound effect on the button click
-document.getElementById('sound-button').addEventListener('click', () => {
-  const audio = new Audio('sounds/startup_sound.mp3');
-  audio.play().catch(error => {
-      console.error('Error playing audio:', error);
-  });
-});
+
 
 // Function to navigate to the selected page
 function navigateToPage() {
