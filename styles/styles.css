@@ -21,7 +21,7 @@
 /*Use this custom font to look windowsy*/
 @font-face {
   font-family: 'PixelOperator';
-  src: url('fonts/pixeloperator.ttf') format('truetype');
+  src: url('../fonts/pixeloperator.ttf') format('truetype');
 }
 
 /*General body styling, other three fonts are backups, just in case*/
