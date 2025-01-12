@@ -1,3 +1,4 @@
+console.log("minesweeper.js loaded");
 const boardSize = 5;
         const bombCount = 1;
         function createBoard() {
