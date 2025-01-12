@@ -28,60 +28,6 @@ Promise.all([
     addEventListeners();
 }).catch(error => console.error('Error loading components:', error));
 
-
-
-// Logic to open a window by making it visible and animating it by adding and removing classes
-console.log("Script.js loaded");
-const trash = [];
-function openWindow(windowElement) {
-  windowElement.style.display = 'block';
-  windowElement.classList.add('maximizing');
-  windowElement.classList.remove('fade-out');
-  windowElement.addEventListener('animationend', function handleMaximize() {
-      windowElement.classList.remove('maximizing');
-      windowElement.removeEventListener('animationend', handleMaximize);
-  });
-}
-
-// Slightly more work for the closing animation, as we have to move the windows below the closing window, and prevent minesweeper and the recycle bin from being added to the trash
-function closeWindow(windowElement) {
-  const allWindows = Array.from(document.querySelectorAll('.window'));
-  const closingIndex = allWindows.indexOf(windowElement);
-  const closingWindowHeight = windowElement.offsetHeight;
-
-  windowElement.classList.add('fade-out');
-
-  allWindows.slice(closingIndex + 1).forEach(win => {
-      win.style.transform = `translateY(-${closingWindowHeight}px)`;
-      win.classList.add('slide-up');
-  });
-
-  windowElement.addEventListener('animationend', function handleFadeOut() {
-      windowElement.style.display = 'none';
-      windowElement.classList.remove('fade-out');
-      windowElement.removeEventListener('animationend', handleFadeOut);
-
-      allWindows.slice(closingIndex + 1).forEach(win => {
-          win.classList.remove('slide-up');
-          win.style.transform = '';
-      });
-
-      if (!windowElement.classList.contains('recycle-window') && !windowElement.classList.contains('minesweeper-window')) {
-          const title = windowElement.querySelector('.title-bar .title').innerText;
-          trash.push({ element: windowElement, title });
-          updateTrashList();
-          updateRecycleBinIcon();
-      }
-  });
-}
-
-
-
-// Add event listeners to the minimize button
-
-
-
-
 function addEventListeners() {
     // Open the recycle bin window when the icon is clicked
     const recycleBin = document.getElementById('recycle-bin');
@@ -158,6 +104,60 @@ function addEventListeners() {
         });
     });
 }
+
+// Logic to open a window by making it visible and animating it by adding and removing classes
+console.log("Script.js loaded");
+const trash = [];
+function openWindow(windowElement) {
+  windowElement.style.display = 'block';
+  windowElement.classList.add('maximizing');
+  windowElement.classList.remove('fade-out');
+  windowElement.addEventListener('animationend', function handleMaximize() {
+      windowElement.classList.remove('maximizing');
+      windowElement.removeEventListener('animationend', handleMaximize);
+  });
+}
+
+// Slightly more work for the closing animation, as we have to move the windows below the closing window, and prevent minesweeper and the recycle bin from being added to the trash
+function closeWindow(windowElement) {
+  const allWindows = Array.from(document.querySelectorAll('.window'));
+  const closingIndex = allWindows.indexOf(windowElement);
+  const closingWindowHeight = windowElement.offsetHeight;
+
+  windowElement.classList.add('fade-out');
+
+  allWindows.slice(closingIndex + 1).forEach(win => {
+      win.style.transform = `translateY(-${closingWindowHeight}px)`;
+      win.classList.add('slide-up');
+  });
+
+  windowElement.addEventListener('animationend', function handleFadeOut() {
+      windowElement.style.display = 'none';
+      windowElement.classList.remove('fade-out');
+      windowElement.removeEventListener('animationend', handleFadeOut);
+
+      allWindows.slice(closingIndex + 1).forEach(win => {
+          win.classList.remove('slide-up');
+          win.style.transform = '';
+      });
+
+      if (!windowElement.classList.contains('recycle-window') && !windowElement.classList.contains('minesweeper-window')) {
+          const title = windowElement.querySelector('.title-bar .title').innerText;
+          trash.push({ element: windowElement, title });
+          updateTrashList();
+          updateRecycleBinIcon();
+      }
+  });
+}
+
+
+
+// Add event listeners to the minimize button
+
+
+
+
+
 
 
 
