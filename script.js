@@ -19,6 +19,11 @@ Promise.all([
         .then(data => {
             document.getElementById('minesweeper-container').innerHTML = data;
         }),
+    fetch('components/start-bar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('start-bar-container').innerHTML = data;
+        }),
 ]).then(() => {
     addEventListeners();
 }).catch(error => console.error('Error loading components:', error));
