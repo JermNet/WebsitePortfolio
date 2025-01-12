@@ -3,53 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPortfolio - Fun Things</title>
+    <title>Fun Things</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="images/icons/directory.png">
+    <link rel="icon" type="image/x-icon" href="images/icons/movie_maker.png">
 </head>
 <body>
-    <div id="icon-column">
-        <div class="icon" id="home" title="Home">
-            <a href="index.html"><img src="images/icons/computer.png" alt="Computer Icon"></a>
-            <span>Home</span>
-        </div>
-        <div class="icon" id="recycle-bin" title="Recycle Bin">
-            <img id="recycle-bin-icon" src="images/icons/recycle_bin_empty.png" alt="Recycle Bin Icon">
-            <span>Recycle Bin</span>
-        </div>
-        <div class="icon" id="my-github" title="Github">
-            <a href="https://github.com/JermNet"><img src="images/icons/world.png" alt="World Icon"></a>
-            <span>My GitHub</span>
-        </div>
-        <div class="icon" id="cool-projects" title="Projects">
-            <a href="projects.html"><img src="images/icons/console_prompt.png" alt="Console Prompt Icon"></a>
-            <span>Cool Projects</span>
-        </div>
-        <div class="icon" id="fun-things" title="Fun">
-            <a href="fun.html"><img src="images/icons/movie_maker.png" alt="Movie Maker Icon"></a>
-            <span>Fun Things</span>
-        </div>
-        <div class="icon" id="youtube-videos" title="Commentaries">
-            <a href="https://www.youtube.com/@JeremyWCoding"><img src="images/icons/camera_vid.png"></a>
-            <span>YouTube Videos</span>
-        </div>
-        <div class="icon" id="vital-documents" title="Documents">
-            <a href="documents.html"><img src="images/icons/briefcase.png"></a>
-            <span>Vital Documents</span>
-        </div>
-        <div class="icon" id="contact-me" title="Contact">
-            <a href="contact.html"><img src="images/icons/modem.png"></a>
-            <span>Contact Me</span>
-        </div>
-        <div class="icon" id="minesweeper" title="Minesweeper">
-            <img src="images/icons/minesweeper.png" alt="Minesweeper Icon">
-            <span>Minesweeper</span>
-        </div>
-        <div class="icon" id="credits" title="Credits">
-            <a href="credits.html"><img src="images/icons/notepad.png" alt="Notepad Icon"></a>
-            <span>Credits</span>
-        </div>
-    </div>
+    <div id="icon-column-container"></div>
 
     <div id="icon-column-2">
         <div class="icon" id="vnds-project" title="vnds Icon">
@@ -82,55 +41,13 @@
         </div>
     </div>
     
-    <div class="search-bar">
-        <label for="page-select">Search:</label>
-        <select id="page-select" onchange="navigateToPage()">
-            <option value="">Select a page or stay here</option>
-            <option value="index.html">Home</option>
-            <option value="https://github.com/JermNet">My GitHub</option>
-            <option value="projects.html">Cool Projects</option>
-            <option value="fun.html">Fun Things</option>
-            <option value="https://www.youtube.com/@JeremyWCoding">Video Commentaries</option>
-            <option value="documents.html">Important Documents</option>
-            <option value="contact.html">Contact Me</option>
-            <option value="credits.html">Credits</option>
-        </select>
-    </div>
-
-    <div class="window recycle-window" id="recycle-window-id" style="display: none;">
-        <div class="title-bar">
-            <span class="title">Recycle Bin</span>
-            <div class="buttons">
-                <button class="minimize">_</button>
-                <button class="maximize">□</button>
-                <button class="close">X</button>
-            </div>
-        </div>
-        <div class="content">
-            <ul id="recycle-list">
-                <li>No items in recycle bin</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="window minesweeper-window" id="minesweeper-window-id" style="display: none;">
-        <div class="title-bar">
-            <span class="title">Minesweeper</span>
-            <div class="buttons">
-                <button class="minimize">_</button>
-                <button class="maximize">□</button>
-                <button class="close">X</button>
-            </div>
-        </div>
-        <div class="content">
-            <div id="minesweeper-board"></div>
-            <button id="restart-button">Restart</button>
-        </div>
-    </div>
+    <div id="search-bar-container"></div>
+    <div id="recycle-bin-container"></div>
+    <div id="minesweeper-container"></div>
 
     <div class="window">
         <div class="title-bar">
-            <span class="title">Explination</span>
+            <span class="title">Fun words</span>
             <div class="buttons">
                 <button class="minimize">_</button>
                 <button class="maximize">□</button>
@@ -138,17 +55,11 @@
             </div>
         </div>
         <div class="content">
-            <p>
-                The most important things when taking on a new job is learning what you'll do, fostering relationships and growing as a person and in your career. I hope to achieve all of those things. Actively working together with people is just something that can't be completely replicated through schooling, and is something I'd love to do with my potential coworkers. In school, the people all come from different backgrounds and have experiences, but they all learn the same thing for a reason. In a workplace, that's different. There will likely be people way above, and way below my level of knowledge. Both teaching and being taught are great ways to learn and to grow closer to people, so I'm looking forward to both.
-            </p>
-            <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>
-                Just as an example, this is a video I've done explaining one of my assignments. I kind of went under the assumption that the person watching it would have knowledge of the topic at hand, but I still go over some of the basics quickly just in case. It's an example of me teach that I don't think is half bad, and I've tutored one of my classmates in the past, so I do think that I have the capability to teach others.
-            </p>
+
         </div>
     </div>
 
-    <div class="window" id="vnds-project-window-id" style="display: none;">
+    <div class="window" id="vnds-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Port of Milk Inside a Bag of Milk Inside a Bag of Milk</span></a>
             <div class="buttons">
@@ -160,12 +71,12 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="clannad-project-window-id" style="display: none;">
+    <div class="window" id="clannad-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Clannad Fan Page</span></a>
             <div class="buttons">
@@ -177,12 +88,12 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="renpy-project-window-id" style="display: none;">
+    <div class="window" id="renpy-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Ren'Py Visual Novel</span></a>
             <div class="buttons">
@@ -194,12 +105,12 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="pokemon-project-window-id" style="display: none;">
+    <div class="window" id="pokemon-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Pokemon Card Opener Website</span></a>
             <div class="buttons">
@@ -211,12 +122,12 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="pre-programming-project-window-id" style="display: none;">
+    <div class="window" id="pre-programming-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Pre Programming Era Websites</span></a>
             <div class="buttons">
@@ -229,12 +140,12 @@
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="templates-project-window-id" style="display: none;">
+    <div class="window" id="templates-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Templates</span></a>
             <div class="buttons">
@@ -246,12 +157,12 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="window" id="threes-company-project-window-id" style="display: none;">
+    <div class="window" id="threes-company-project-window-id">
         <div class="title-bar">
             <a href=""><span class="title">Three's Company Fan Page</span></a>
             <div class="buttons">
@@ -263,25 +174,14 @@
         <div class="content">
             <iframe width="560" height="315" class="centered-iframe" src="https://youtube.com/embed/AWUPwv_7GQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
             </p>
         </div>
     </div>
 
-    <div class="start-bar">
-        <div class="start-button" id="sound-button">
-            <img src="images/icons/cd_audio.png" alt="CD Icon">
-            <span>Start</span>
-        </div>
-        <a href="projects.html#test" class="a-button">
-            <div class="start-button">
-                <img src="images/icons/text_file.png" alt="Text File Icon">
-                <span>Project 1</span>
-            </div>
-        </a>
-    </div>
+    <div id="start-bar-container"></div>
 
     <script src="script.js"></script>
-    <script src="minesweeper.js"></script>
+    <script src="minesweeper.js" defer></script>
 </body>
 </html>

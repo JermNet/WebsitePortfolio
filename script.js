@@ -103,6 +103,18 @@ function addEventListeners() {
             console.error('Error playing audio:', error);
         });
     });
+
+    const projectIds = [
+        'c-project', 'c-sharp-project', 'c-plus-plus-project', 'html5-project', 'javascript-project', 'css3-project', 'sql-project', 'java-project', 'python-project', 'spring-boot-project', 'android-project', 'vnds-project', 'clannad-project', 'renpy-project', 'pokemon-project', 'pre-programming-project', 'templates-project', 'threes-company-project'
+    ];
+
+    projectIds.forEach(projectId => {
+        const projectElement = document.getElementById(projectId);
+        if (projectElement) {
+            handleProjectWindow(projectId, `${projectId}-window-id`);
+        }
+    });
+    
 }
 
 // Logic to open a window by making it visible and animating it by adding and removing classes
@@ -184,27 +196,6 @@ function handleProjectWindow(projectId, windowId) {
     });
 }
 
-if (document.getElementById('c-project')) {
-    handleProjectWindow('c-project', 'c-project-window-id');
-    handleProjectWindow('c-sharp-project', 'c-sharp-project-window-id');
-    handleProjectWindow('c-plus-plus-project', 'c-plus-plus-project-window-id');
-    handleProjectWindow('html5-project', 'html5-project-window-id');
-    handleProjectWindow('javascript-project', 'javascript-project-window-id');
-    handleProjectWindow('css3-project', 'css3-project-window-id');
-    handleProjectWindow('sql-project', 'sql-project-window-id');
-    handleProjectWindow('java-project', 'java-project-window-id');
-    handleProjectWindow('python-project', 'python-project-window-id');
-    handleProjectWindow('spring-boot-project', 'spring-boot-project-window-id');
-    handleProjectWindow('android-project', 'android-project-window-id');
-} else {
-    handleProjectWindow('vnds-project', 'vnds-project-window-id');
-    handleProjectWindow('clannad-project', 'clannad-project-window-id');
-    handleProjectWindow('renpy-project', 'renpy-project-window-id');
-    handleProjectWindow('pokemon-project', 'pokemon-project-window-id');
-    handleProjectWindow('pre-programming-project', 'pre-programming-project-window-id')
-    handleProjectWindow('templates-project', 'templates-project-window-id')
-    handleProjectWindow('threes-company-project', 'threes-company-project-window-id')
-}
 
 
 // Add/remove classes to the recycle bin window when they're deleted/restored

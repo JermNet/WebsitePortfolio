@@ -1,5 +1,6 @@
 console.log("minesweeper.js loaded");
-const boardSize = 5;
+document.addEventListener('DOMContentLoaded', () => {
+    const boardSize = 5;
         const bombCount = 1;
         function createBoard() {
             const board = [];
@@ -122,6 +123,15 @@ const boardSize = 5;
             renderBoard(board);
         }
 
-        document.getElementById('restart-button').addEventListener('click', startGame);
+        const restartButton = document.getElementById('restart-button');
+        if (restartButton) {
+            restartButton.addEventListener('click', () => {
+                // Restart game logic here
+                console.log('Restart button clicked');
+            });
+        } else {
+            console.error('Restart button not found');
+        }
 
         startGame();
+});
