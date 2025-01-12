@@ -14,6 +14,11 @@ Promise.all([
         .then(data => {
             document.getElementById('recycle-bin-container').innerHTML = data;
         }),
+    fetch('components/minesweeper.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('minesweeper-container').innerHTML = data;
+        }),
 ]).then(() => {
     addEventListeners();
 }).catch(error => console.error('Error loading components:', error));
