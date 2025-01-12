@@ -26,6 +26,7 @@ Promise.all([
         }),
 ]).then(() => {
     addEventListeners();
+    startGame();
 }).catch(error => console.error('Error loading components:', error));
 
 function addEventListeners() {

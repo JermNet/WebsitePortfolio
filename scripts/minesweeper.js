@@ -133,5 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Restart button not found');
         }
 
-        startGame();
+        
+        window.startGame = startGame;
 });
