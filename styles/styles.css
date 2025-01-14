@@ -467,3 +467,8 @@ body {
   from { transform: scale(0.5); opacity: 0.5; }
   to { transform: scale(1); opacity: 1; }
 }
+
+.pdf {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+}
