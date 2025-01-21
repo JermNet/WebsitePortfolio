@@ -16,9 +16,11 @@
   --bar-color-2: #1a1a80;
   /*Red*/
   --danger-color: #FF0000;
+  /*Anti-Flash White*/
+  --text-bg-color: #F0F0F0;
 }
 
-/*Use this custom font to look windowsy*/
+/*Use this custom font to look Windowsy*/
 @font-face {
   font-family: 'PixelOperator';
   src: url('../fonts/pixeloperator.ttf') format('truetype');
@@ -54,6 +56,7 @@ body {
   top: 7px;
 }
 
+/*A third even righter than that*/
 #icon-column-3 {
   display: flex;
   flex-direction: column;
@@ -174,6 +177,11 @@ body {
   cursor: pointer;
 }
 
+/*Anchor tag styling in title-bar*/
+.title-bar a {
+  color: var(--main-color)
+}
+
 /*Just the window part of the window, not the top bar or buttons*/
 .window {
   width: 650px;
@@ -241,12 +249,23 @@ body {
   display: none;
 }
 
+/*Styling for content images*/
 .window .content img {
   max-width: 50%;
   max-height: 100%;
   object-fit: contain;
   display: block;
   margin: 0 auto;
+}
+
+/*Ensure a maximum of three icons per row in the "My Skills" window*/
+.window.skills-window .content ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*The actual content of the windows*/
@@ -262,10 +281,11 @@ body {
   animation: minimizeContent 0.3s forwards;
 }
 
+/*Content paragraphs*/
 .content p {
-  background-color: #f0f0f0; /* Light grey background */
-  padding: 10px; /* Add some padding */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  background-color: var(--text-bg-color);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /*Round the edges of an image*/
@@ -381,27 +401,18 @@ body {
   filter: brightness(1.2);
 }
 
-.centered-iframe {
+/*iframe styling*/
+iframe {
   display: block;
-  margin: 20px auto; /* Center the iframe horizontally and add vertical margin */
-  border-radius: 15px; /* Add rounded corners */
-  overflow: hidden; /* Ensure the content respects the rounded corners */
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 560px;
+  height: 315px;
+  border: none;
 }
 
-.title-bar a {
-  color: var(--main-color)
-}
-
-/* Ensure a maximum of three icons per row in the "My Skills" window */
-.window.skills-window .content ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
+/*Lists of cards styling*/
 .card {
 	padding: auto;
 	height: 140px;
@@ -411,10 +422,6 @@ body {
 
 .card:hover {
   filter: brightness(1.2);
-}
-
-.bottom-window {
-  margin-bottom: 50px;
 }
 
 .cards {	
@@ -434,6 +441,12 @@ body {
   margin-top: 10px;
   font-size: 20px;
   text-align: center;
+}
+
+/*PDF styling*/
+.pdf {
+	width: 100%;
+	aspect-ratio: 4 / 3;
 }
 
 /*Animation for the content of a window*/
@@ -466,9 +479,4 @@ body {
 @keyframes maximize {
   from { transform: scale(0.5); opacity: 0.5; }
   to { transform: scale(1); opacity: 1; }
-}
-
-.pdf {
-	width: 100%;
-	aspect-ratio: 4 / 3;
 }
