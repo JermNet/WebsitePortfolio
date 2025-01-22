@@ -25,8 +25,11 @@ Promise.all([
             document.getElementById('start-bar-container').innerHTML = data;
         }),
 ])
-.catch(error => console.error('Error loading components:', error))
-.finally(addEventListeners(), startGame());
+.then(() => {
+    addEventListeners();
+    startGame();
+})
+.catch(error => console.error('Error loading components:', error));
 
 function addEventListeners() {
     // Open the recycle bin window when the icon is clicked
