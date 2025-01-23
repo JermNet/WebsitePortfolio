@@ -108,7 +108,7 @@ function addEventListeners() {
     });
 
     const projectIds = [
-        'c-project', 'c-sharp-project', 'c-plus-plus-project', 'html5-project', 'javascript-project', 'css3-project', 'sql-project', 'java-project', 'python-project', 'spring-boot-project', 'android-project', 'vnds-project', 'clannad-project', 'renpy-project', 'pokemon-project', 'pre-programming-project', 'templates-project', 'threes-company-project'
+        'c-project', 'c-sharp-project', 'c-plus-plus-project', 'html5-project', 'javascript-project', 'css3-project', 'sql-project', 'java-project', 'python-project', 'spring-boot-project', 'android-project', 'vnds-project', 'clannad-project', 'renpy-project', 'pokemon-project', 'pre-programming-project', 'templates-project', 'threes-company-project', 'vscode-extension-project'
     ];
 
     projectIds.forEach(projectId => {
