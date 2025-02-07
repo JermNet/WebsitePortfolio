@@ -1,3 +1,4 @@
+// Fetch components and load them into the pages
 Promise.all([
     fetch('components/search-bar.html')
         .then(response => response.text())
@@ -66,6 +67,7 @@ function addEventListeners() {
         });
     });
 
+    // Add event listeners to the minimize button, with a bit of extra logic for handling it with an animation and whatnot
     document.querySelectorAll('.minimize').forEach(button => {
         button.addEventListener('click', function () {
             const windowElement = this.closest('.window');
@@ -82,7 +84,7 @@ function addEventListeners() {
         });
       });
 
-      // Add event listeners to the maximize button
+    // Add event listeners to the maximize button
     document.querySelectorAll('.maximize').forEach(button => {
         button.addEventListener('click', function () {
             const windowElement = this.closest('.window');
@@ -107,8 +109,9 @@ function addEventListeners() {
         });
     });
 
+    // Use the function to add event listeners
     const projectIds = [
-        'c-project', 'c-sharp-project', 'c-plus-plus-project', 'html5-project', 'javascript-project', 'css3-project', 'sql-project', 'java-project', 'python-project', 'spring-boot-project', 'android-project', 'vnds-project', 'clannad-project', 'renpy-project', 'pokemon-project', 'pre-programming-project', 'templates-project', 'vscode-extension-project', 'milk-project', 'p12-project'
+        'c-project', 'c-sharp-project', 'c-plus-plus-project', 'html5-project', 'javascript-project', 'css3-project', 'sql-project', 'java-project', 'python-project', 'spring-boot-project', 'android-project', 'vnds-project', 'clannad-project', 'renpy-project', 'pre-programming-project', 'templates-project', 'vscode-extension-project', 'milk-project', 'p12-project'
     ];
 
     projectIds.forEach(projectId => {
@@ -117,12 +120,11 @@ function addEventListeners() {
             handleProjectWindow(projectId, `${projectId}-window-id`);
         }
     });
-    
 }
 
-// Logic to open a window by making it visible and animating it by adding and removing classes
-console.log("Script.js loaded");
 const trash = [];
+
+// Open a window, using a function for the animation
 function openWindow(windowElement) {
   windowElement.style.display = 'block';
   windowElement.classList.add('maximizing');
@@ -165,19 +167,7 @@ function closeWindow(windowElement) {
   });
 }
 
-
-
-// Add event listeners to the minimize button
-
-
-
-
-
-
-
-
-
-
+// For icon buttons that also send the windows to the trash bin
 function handleProjectWindow(projectId, windowId) {
     const projectElement = document.getElementById(projectId);
     const projectWindow = document.getElementById(windowId);
@@ -190,7 +180,6 @@ function handleProjectWindow(projectId, windowId) {
                 // Restore the window from the trash list
                 restorePost(trashIndex);
             } else {
-                // Open the window normally
                 openWindow(projectWindow);
             }
         } else {
@@ -199,10 +188,7 @@ function handleProjectWindow(projectId, windowId) {
     });
 }
 
-
-
-// Add/remove classes to the recycle bin window when they're deleted/restored
-
+// Add items to the trash can list
 function updateTrashList() {
     const trashList = document.getElementById('recycle-list');
     trashList.innerHTML = '';
@@ -225,8 +211,6 @@ function updateTrashList() {
             trashList.appendChild(listItem);
         });
     }
-
-    
 }
 
 // Add windows back to the dom and remove them from the trash
@@ -253,8 +237,6 @@ function updateRecycleBinIcon() {
         recycleBinIcon.src = 'images/icons/recycle_bin_empty.png';
     }
 }
-
-
 
 // Function to navigate to the selected page
 function navigateToPage() {

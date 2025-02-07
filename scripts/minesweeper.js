@@ -1,4 +1,4 @@
-console.log("minesweeper.js loaded");
+
 document.addEventListener('DOMContentLoaded', () => {
     const boardSize = 5;
         const bombCount = 1;
