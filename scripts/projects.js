@@ -15,15 +15,15 @@ const projects = [
   },
   {
     id: "c-sharp-project",
-    title: "C# Assignment 4",
-    link: "https://github.com/JermNet/CSharpAssignment4",
-    video: "https://youtube.com/embed/w1V6Z83cbwI",
+    title: "C# Assignment 13",
+    link: "https://github.com/JermNet/CSharpAssignment13",
+    video: "https://www.youtube.com/embed/-3e1g3ec4Pk?si=rcJtE9T2yWrBJuct",
     content: `
         <p>
-            This is a relatively recent assignment, and one that's kind of a step in a series of assignments. We had to make a "face slot machine" where you can mix and match faces using hair, eyes, nose and mouth elements. So, to kind of show off the different elements of WPF C#, we had to use a different item to select each section (checkbox, slider, etc.).
+            This was our final project (though not in name) for my C# class, and the third in a series of us doing 3D model related assignments. As a result, this one had a focus on code reuse, which was really fun. Naturally, as someone taught object oriented programming, it is something I think about, but this assignment made me think about it in a different way. 
         </p>
         <p>
-            On top of the different elements, we also had to add a key shortcuts for each face segment as well, which was a pretty neat thing to learn and do. Since I'm still going through this course, this section will likely be updated with a more advanced C# assignment.
+            We had to make Tic Tac Toe in 2D and in 3D while using as much of the same code as possible. For some things like the 3D models, it was easy, but pretty much everything else required a lot of math, and took a while to figure out. Like I said, it was really fun, though, especially working with 3D models.
         </p>
     `
   },
