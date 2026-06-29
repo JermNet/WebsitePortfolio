@@ -1,4 +1,5 @@
 const projects = [
+    // Hivo Inc. work term goes here
   {
     id: "c-project",
     title: "C Final Project",

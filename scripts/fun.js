@@ -1,4 +1,5 @@
 const projects = [
+  // dream website goes here
   {
     id: "vnds-project",
     title: "vnds Documentation Page",
