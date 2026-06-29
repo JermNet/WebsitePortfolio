@@ -113,15 +113,15 @@ const projects = [
   },
   {
     id: "python-project",
-    title: "Python Milestone 1",
-    link: "https://github.com/JermNet/PythonMilestone1",
+    title: "Python Milestone 3",
+    link: "https://github.com/JermNet/PythonMilestone3",
     video: "https://youtube.com/embed/S1g4PHkWM9o",
     content: `
         <p>
-            This is the first milestone I did for my self study project. It's a still ongoing course, so this is my first of four, and probably what will be the least impressive of these milestones. I was mostly focusing on learning the language, and I though about just making that the milestone, but I want to prove that I did the language.
+            Tetris! Well, legally distinct Tetris. I had one more milestone after this one, but I'm featuring that one on my personal project page because of how much of myself I put into it. This one was a lot of fun to do, though, and I'm proud of how well it turned out.
         </p>
         <p>
-            So, what I decided to do was remake my final from my C++ course. A lot of that video up there is me going over the differences between Python and other languages to show my knowledge. I'm really liking Python so far, though, it's a nice language.
+            One thing I'm especially proud of is how I managed the piece as a whole, but especially how I got them to rotate. You have to think about an imaginary box around the piece, and rotate the piece within that box. That was a bit tricky to wrap ,my head around, but I got it working, and I'm proud of that.
         </p>
     `
   },
